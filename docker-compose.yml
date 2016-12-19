@@ -1,0 +1,17 @@
+version: '2'
+services:
+  db:
+    image: mysql:5
+    restart: always
+    environment:
+      MYSQL_DATABASE: tieba
+      MYSQL_USER: tieba
+      MYSQL_PASSWORD: tieba
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+  server:
+    build: .
+    ports:
+      - 80:80
+    restart: always
+    links:
+      - db
