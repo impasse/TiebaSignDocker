@@ -11,3 +11,5 @@ RUN apt-get update && apt-get install -y \
       && docker-php-ext-install mysqli gd zip
 
 COPY src/ /var/www/html
+
+RUN chown -R www-data.www-data /var/www/html
