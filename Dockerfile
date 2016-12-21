@@ -3,6 +3,7 @@ FROM php:apache
 EXPOSE 80
 
 RUN apt-get update && apt-get install -y \
+      cron \
       libfreetype6-dev \
       libjpeg62-turbo-dev \
       libmcrypt-dev \
@@ -13,3 +14,7 @@ RUN apt-get update && apt-get install -y \
 COPY src/ /var/www/html
 
 RUN chown -R www-data.www-data /var/www/html
+
+COPY init.sh /init.sh
+
+ENTRYPOINT ["/init.sh"]
