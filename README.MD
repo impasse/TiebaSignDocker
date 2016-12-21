@@ -14,7 +14,7 @@
 AND
 
 1. Go to http://hostname
-+. Enter database infomation
++ Enter database infomation
 
 ```
 DB_HOST: db
